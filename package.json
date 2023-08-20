@@ -16,6 +16,7 @@
 		"tailwindcss": "^3.3.3"
 	},
 	"dependencies": {
+		"animejs": "^3.2.1",
 		"masonry-layout": "^4.2.2",
 		"simple-lightbox": "^2.1.0",
 		"swiper": "^10.1.0"

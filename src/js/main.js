@@ -1,24 +1,7 @@
 import '../css/main.scss'
+import '../js/nav'
 import Masonry from 'masonry-layout'
 var SimpleLightbox = require('simple-lightbox')
-
-// mobile menu
-const hamburger = document.getElementById('menu-btn')
-const nav = document.getElementById('menu')
-
-hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('open')
-	nav.classList.toggle('flex')
-	nav.classList.toggle('hidden')
-})
-
-// dropdown menu
-const dropdownBtn = document.querySelector('.dropdownBtn')
-dropdownBtn.addEventListener('click', () => {
-	document.getElementById('options').classList.toggle('hidden')
-	document.getElementById('arrow-up').classList.toggle('hidden')
-	document.getElementById('arrow-down').classList.toggle('hidden')
-})
 
 // grid gallery
 new SimpleLightbox({ elements: '.grid-gallery a', captionAttribute: 'title' })
@@ -28,6 +11,7 @@ window.onload = () => {
 	const masonry = new Masonry(grid, {
 		itemSelector: '.grid-item',
 		gutter: 43,
+		isFitWidth: true,
 	})
 	loadMore()
 }

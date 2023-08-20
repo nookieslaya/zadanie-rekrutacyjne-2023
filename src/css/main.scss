@@ -85,18 +85,25 @@
 .text-shadow {
 	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
+.box {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .grid-item {
 	margin-bottom: 42px;
+
 	img {
 		width: 100%;
 	}
 	@media (max-width: 976px) {
-		width: 40%;
+		max-width: 300px;
 	}
+
 	@media (max-width: 500px) {
 		width: 100%;
-		padding: 10px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -190,4 +197,28 @@
 .search-icon i {
 	color: #fff;
 	cursor: pointer;
+}
+
+.ignore-br {
+	br {
+		@media (max-width: 972px) {
+			display: none;
+		}
+	}
+}
+
+.menu-item:hover {
+	color: #4c9064;
+}
+
+.link-arrow img,
+.link-arrow-down img {
+	transition: 0.2s ease-in;
+}
+
+.link-arrow:hover img {
+	transform: translateX(20%);
+}
+.link-arrow-down:hover img {
+	transform: translateY(20%);
 }

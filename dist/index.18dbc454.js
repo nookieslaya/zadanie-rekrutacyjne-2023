@@ -145,24 +145,11 @@
 })({"1SICI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _mainScss = require("../css/main.scss");
+var _anime = require("../js/anime");
+var _nav = require("../js/nav");
 var _masonryLayout = require("masonry-layout");
 var _masonryLayoutDefault = parcelHelpers.interopDefault(_masonryLayout);
 var SimpleLightbox = require("8da2442e5207a532");
-// mobile menu
-const hamburger = document.getElementById("menu-btn");
-const nav = document.getElementById("menu");
-hamburger.addEventListener("click", ()=>{
-    hamburger.classList.toggle("open");
-    nav.classList.toggle("flex");
-    nav.classList.toggle("hidden");
-});
-// dropdown menu
-const dropdownBtn = document.querySelector(".dropdownBtn");
-dropdownBtn.addEventListener("click", ()=>{
-    document.getElementById("options").classList.toggle("hidden");
-    document.getElementById("arrow-up").classList.toggle("hidden");
-    document.getElementById("arrow-down").classList.toggle("hidden");
-});
 // grid gallery
 new SimpleLightbox({
     elements: ".grid-gallery a",
@@ -172,7 +159,8 @@ window.onload = ()=>{
     const grid = document.querySelector(".grid");
     const masonry = new (0, _masonryLayoutDefault.default)(grid, {
         itemSelector: ".grid-item",
-        gutter: 43
+        gutter: 43,
+        isFitWidth: true
     });
     loadMore();
 };
@@ -213,7 +201,7 @@ closeIcon.addEventListener("click", ()=>{
     searchInputWrapper.classList.remove("change");
 });
 
-},{"../css/main.scss":"gNxq3","masonry-layout":"cYDx4","8da2442e5207a532":"i95q9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gNxq3":[function() {},{}],"cYDx4":[function(require,module,exports) {
+},{"../css/main.scss":"gNxq3","masonry-layout":"cYDx4","8da2442e5207a532":"i95q9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../js/anime":"5zM3X","../js/nav":"9oAPP"}],"gNxq3":[function() {},{}],"cYDx4":[function(require,module,exports) {
 /*!
  * Masonry v4.2.2
  * Cascading grid layout library
@@ -2203,6 +2191,59 @@ exports.export = function(dest, destName, get) {
         enumerable: true,
         get: get
     });
+};
+
+},{}],"5zM3X":[function(require,module,exports) {
+// import anime from 'animejs/lib/anime.es.js'
+// const anime = require('animejs')
+// const animation = anime({
+// 	targets: '.header-section, .projects-header',
+// 	translateX: 100,
+// 	direction: 'alternate',
+// 	easing: 'easeInOutSine',
+// })
+// const headerOne = document.querySelector('.header-section')
+// const headerTwo = document.querySelector('.header-projects')
+// // Animate on scroll
+// const animateOnScroll = function (div, speed = 500, offset = 0) {
+// 	const scrollPercent = window.scrollY - div.offsetTop
+// 	return (scrollPercent + offset) / speed
+// }
+// // Scroll listener
+// window.onscroll = function () {
+// 	animation.seek(animateOnScroll(headerOne, 1000, 200) * animation.duration)
+// 	animation.seek(animateOnScroll(headerTwo, 1000, 200) * animation.duration)
+// }
+
+},{}],"9oAPP":[function(require,module,exports) {
+// mobile menu
+const hamburger = document.getElementById("menu-btn");
+const nav = document.getElementById("menu");
+hamburger.addEventListener("click", ()=>{
+    hamburger.classList.toggle("open");
+    nav.classList.toggle("flex");
+    nav.classList.toggle("hidden");
+});
+document.onclick = function(e) {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove("flex");
+        nav.classList.add("hidden");
+        hamburger.classList.remove("open");
+    }
+};
+// dropdown menu
+const dropdownBtn = document.querySelector(".dropdownBtn");
+dropdownBtn.addEventListener("click", ()=>{
+    document.getElementById("options").classList.toggle("hidden");
+    document.getElementById("arrow-up").classList.toggle("hidden");
+    document.getElementById("arrow-down").classList.toggle("hidden");
+});
+document.onclick = function(e) {
+    if (!dropdownBtn.contains(e.target)) {
+        document.getElementById("options").classList.add("hidden");
+        document.getElementById("arrow-up").classList.add("hidden");
+        document.getElementById("arrow-down").classList.remove("hidden");
+    }
 };
 
 },{}]},["1SICI"], "1SICI", "parcelRequire8579")
