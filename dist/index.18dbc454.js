@@ -146,6 +146,8 @@
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _mainScss = require("../css/main.scss");
 var _nav = require("../js/nav");
+var _animation = require("../js/animation");
+var _modal = require("../js/modal");
 var _masonryLayout = require("masonry-layout");
 var _masonryLayoutDefault = parcelHelpers.interopDefault(_masonryLayout);
 var SimpleLightbox = require("8da2442e5207a532");
@@ -200,7 +202,7 @@ closeIcon.addEventListener("click", ()=>{
     searchInputWrapper.classList.remove("change");
 });
 
-},{"../css/main.scss":"gNxq3","../js/nav":"9oAPP","masonry-layout":"cYDx4","8da2442e5207a532":"i95q9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gNxq3":[function() {},{}],"9oAPP":[function(require,module,exports) {
+},{"../css/main.scss":"gNxq3","../js/nav":"9oAPP","masonry-layout":"cYDx4","8da2442e5207a532":"i95q9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../js/animation":"3h5E3","../js/modal":"aHHgN"}],"gNxq3":[function() {},{}],"9oAPP":[function(require,module,exports) {
 // mobile menu
 const hamburger = document.getElementById("menu-btn");
 const nav = document.getElementById("menu");
@@ -209,25 +211,33 @@ hamburger.addEventListener("click", ()=>{
     nav.classList.toggle("flex");
     nav.classList.toggle("hidden");
 });
-document.onclick = function(e) {
-    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-        nav.classList.remove("flex");
-        nav.classList.add("hidden");
-        hamburger.classList.remove("open");
-    }
-};
-// dropdown menu
 const dropdownBtn = document.querySelector(".dropdownBtn");
 dropdownBtn.addEventListener("click", ()=>{
     document.getElementById("options").classList.toggle("hidden");
     document.getElementById("arrow-up").classList.toggle("hidden");
     document.getElementById("arrow-down").classList.toggle("hidden");
 });
+const dropdownBtn2 = document.querySelector(".dropdownBtn2");
+dropdownBtn2.addEventListener("click", ()=>{
+    document.getElementById("options2").classList.toggle("hidden");
+    document.getElementById("arrow-up2").classList.toggle("hidden");
+    document.getElementById("arrow-down2").classList.toggle("hidden");
+});
 document.onclick = function(e) {
     if (!dropdownBtn.contains(e.target)) {
         document.getElementById("options").classList.add("hidden");
         document.getElementById("arrow-up").classList.add("hidden");
         document.getElementById("arrow-down").classList.remove("hidden");
+    }
+    if (!dropdownBtn2.contains(e.target)) {
+        document.getElementById("options2").classList.add("hidden");
+        document.getElementById("arrow-up2").classList.add("hidden");
+        document.getElementById("arrow-down2").classList.remove("hidden");
+    }
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove("flex");
+        nav.classList.add("hidden");
+        hamburger.classList.remove("open");
     }
 };
 
@@ -2222,6 +2232,38 @@ exports.export = function(dest, destName, get) {
         get: get
     });
 };
+
+},{}],"3h5E3":[function(require,module,exports) {
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if (entry.isIntersecting) entry.target.classList.add("show");
+        else entry.target.classList.remove("show");
+    });
+});
+const hiddenElements = document.querySelectorAll(".animation");
+hiddenElements.forEach((el)=>observer.observe(el));
+
+},{}],"aHHgN":[function(require,module,exports) {
+const modal = document.querySelector(".modal");
+const showModal = document.querySelector(".showModal");
+const showModal2 = document.querySelector(".showModal2");
+const showModal3 = document.querySelector(".showModal3");
+const closeModal = document.querySelector(".closeModal");
+showModal.addEventListener("click", ()=>{
+    modal.classList.remove("hidden");
+});
+closeModal.addEventListener("click", ()=>{
+    modal.classList.add("hidden");
+});
+showModal2.addEventListener("click", ()=>{
+    modal.classList.remove("hidden");
+});
+showModal3.addEventListener("click", ()=>{
+    modal.classList.remove("hidden");
+});
+closeModal.addEventListener("click", ()=>{
+    modal.classList.add("hidden");
+});
 
 },{}]},["1SICI"], "1SICI", "parcelRequire8579")
 
