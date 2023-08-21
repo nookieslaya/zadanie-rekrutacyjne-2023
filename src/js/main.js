@@ -1,5 +1,7 @@
 import '../css/main.scss'
 import '../js/nav'
+import '../js/animation'
+import '../js/modal'
 import Masonry from 'masonry-layout'
 var SimpleLightbox = require('simple-lightbox')
 

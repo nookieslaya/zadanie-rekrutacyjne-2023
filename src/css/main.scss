@@ -8,6 +8,9 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+html {
+	scroll-behavior: smooth;
+}
 
 .hamburger {
 	cursor: pointer;
@@ -96,6 +99,7 @@
 
 	img {
 		width: 100%;
+		height: auto;
 	}
 	@media (max-width: 976px) {
 		max-width: 300px;
@@ -206,6 +210,9 @@
 		}
 	}
 }
+.menu-item {
+	transition: color 0.2s;
+}
 
 .menu-item:hover {
 	color: #4c9064;
@@ -221,4 +228,28 @@
 }
 .link-arrow-down:hover img {
 	transform: translateY(20%);
+}
+// animations
+
+.animation {
+	opacity: 0;
+	transition: opacity 2s;
+	@media (max-width: 972px) {
+		transition: none;
+	}
+}
+
+.show {
+	opacity: 1;
+}
+
+.card:nth-child(2) {
+	transition-delay: 200ms;
+}
+.card:nth-child(3) {
+	transition-delay: 400ms;
+}
+
+.modal-scroll {
+	overflow-x: scroll;
 }

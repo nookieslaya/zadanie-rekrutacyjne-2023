@@ -11,71 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@400;500&display=swap"
         rel="stylesheet">
-
-
 </head>
 
 <body class="font-inter bg-gray mx-auto">
-    <nav class="relative  mx-auto ">
-        <div class="flex items-center justify-between py-6 max-w-[1262px] w-full m-auto">
-            <!-- logo -->
-            <div class="pt-2 xl:pl-0 pl-4">
-                <img src="/src/img/logo.png" alt="">
-            </div>
-            <!-- menu items -->
-            <div class="md:flex hidden space-x-12 relative z-10 tracking-[-0.14px]">
-                <div class="flex-none relative text-black">
-                    <button class="menu-item dropdownBtn flex flex-row justify-between ">
-                        <span>Oferta</span>
-
-                        <svg id="arrow-down" class=" w-6 h-6 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <svg id="arrow-up" class=" hidden w-6 h-6 " xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <div id="options" class="hidden absolute px-8 mt-6 border-t-green/10 bg-gray right-[-150px]">
-                        <div class="flex gap-6 ">
-                            <a href="#" class="inline-flex p-4 w-full gap-2 hover:text-red menu-item">Projekty<img
-                                    class='w-5 h-auto bg-cover bg-no-repeat ' src="img/menu1.svg" alt="icon"></a>
-                            <a href="#" class="inline-flex p-4 gap-2 w-full menu-item">Wizualizacje<img
-                                    class='w-5 h-auto bg-cover bg-no-repeat' src="img/menu2.svg" alt="icon"></a>
-                            <a href="#" class="inline-flex p-4 gap-2 w-full menu-item">Realizacje<img
-                                    class='w-5 h-auto bg-cover bg-no-repeat' src="./img/menu3.svg" alt="icon"></a>
-                        </div>
-                    </div>
+    <div class="fixed w-full bg-gray z-30">
+        <nav class="relative  mx-auto ">
+            <div class="flex items-center justify-between py-6 max-w-[1262px] w-full m-auto">
+                <!-- logo -->
+                <div class="pt-2 xl:pl-0 pl-4">
+                    <a href="#"><img src="/src/img/logo.png" alt="logo"></a>
                 </div>
-
-                <a class="menu-item" href="#">O firmie</a>
-                <a class="menu-item" href="#">Realizacje</a>
-                <a class="menu-item" href="#">Kontakt</a>
-
-                <!-- search  -->
-                <div class="search-input-wrapper ">
-                    <div class="search-input">
-                        <input class="p-4" type="text" placeholder="Szukaj">
-                        <span class="text-4 p-4">&#10005;</span>
-                    </div>
-                </div>
-                <div class="search-icon">
-                    <img class='w-6 xl:mr-0 mr-4' src="img/search.svg" alt="search icon">
-                </div>
-
-            </div>
-
-
-            <!-- mobile menu  -->
-            <div class="md:hidden">
-                <div id="menu"
-                    class="absolute hidden flex-col items-center self-end py-8 mt-8 space-y-6 bg-gray w-full sm:self-center left-0  drop-shadow-md z-20">
+                <!-- menu items -->
+                <div class="md:flex hidden space-x-12 relative z-10 tracking-[-0.14px]">
                     <div class="flex-none relative text-black">
-                        <button class="dropdownBtn flex flex-row justify-between ">
+                        <button class="menu-item dropdownBtn flex flex-row justify-between ">
                             <span>Oferta</span>
 
                             <svg id="arrow-down" class=" w-6 h-6 " xmlns="http://www.w3.org/2000/svg"
@@ -93,39 +42,95 @@
                         </button>
                         <div id="options" class="hidden absolute px-8 mt-6 border-t-green/10 bg-gray right-[-150px]">
                             <div class="flex gap-6 ">
-                                <a href="#" class="inline-flex p-4 w-full gap-2">Projekty<img
+                                <a href="#offer"
+                                    class="inline-flex p-4 w-full gap-2 hover:text-red menu-item">Projekty<img
                                         class='w-5 h-auto bg-cover bg-no-repeat ' src="img/menu1.svg" alt="icon"></a>
-                                <a href="#" class="inline-flex p-4 gap-2 w-full">Wizualizacje<img
+                                <a href="#offer" class="inline-flex p-4 gap-2 w-full menu-item">Wizualizacje<img
                                         class='w-5 h-auto bg-cover bg-no-repeat' src="img/menu2.svg" alt="icon"></a>
-                                <a href="#" class="inline-flex p-4 gap-2 w-full">Realizacje<img
+                                <a href="#offer" class="inline-flex p-4 gap-2 w-full menu-item">Realizacje<img
                                         class='w-5 h-auto bg-cover bg-no-repeat' src="./img/menu3.svg" alt="icon"></a>
                             </div>
                         </div>
                     </div>
-                    <a href="#">O firmie</a>
-                    <a href="#">Realizacje</a>
-                    <a href="#">Kontakt</a>
+
+                    <a class="menu-item" href="#about">O firmie</a>
+                    <a class="menu-item" href="#gallery">Realizacje</a>
+                    <a class="menu-item" href="#contact">Kontakt</a>
+
+                    <!-- search  -->
                     <div class="search-input-wrapper ">
                         <div class="search-input">
                             <input class="p-4" type="text" placeholder="Szukaj">
                             <span class="text-4 p-4">&#10005;</span>
                         </div>
                     </div>
-                    <div class="search-icon">
-                        <img class='w-6' src="img/search.svg" alt="search icon">
+                    <div class="search-icon cursor-pointer">
+                        <img class='w-6 xl:mr-0 mr-4' src="img/search.svg" alt="search icon">
+                    </div>
+
+                </div>
+
+
+                <!-- mobile menu  -->
+                <div class="md:hidden">
+                    <div id="menu"
+                        class="absolute hidden flex-col items-center self-end py-8 mt-8 space-y-6 bg-gray w-full sm:self-center left-0  drop-shadow-md z-20">
+                        <div class="flex flex-col justify-center items-center relative text-black text-center">
+                            <button class="dropdownBtn2 flex flex-row justify-between active:border-b-green">
+                                <span class="ml-3">Oferta</span>
+
+                                <svg id="arrow-down2" class=" w-6 h-6 " xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg id="arrow-up2" class=" hidden w-6 h-6 " xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div id="options2" class="hidden relative space-y-6 border-t-green/10 bg-gray ml-5 mt-5">
+                                <div class="flex flex-col  justify-center items-center">
+                                    <a href="#offer" class="inline-flex p-2 ">Projekty<img
+                                            class='w-5 ml-2 h-auto bg-cover bg-no-repeat ' src="img/menu1.svg"
+                                            alt="icon"></a>
+                                    <a href="#offer" class="inline-flex p-2  ">Wizualizacje<img
+                                            class='w-5 ml-2 h-auto bg-cover bg-no-repeat' src="img/menu2.svg"
+                                            alt="icon"></a>
+                                    <a href="#offer" class="inline-flex p-2  ">Realizacje<img
+                                            class='w-5 ml-2 h-auto bg-cover bg-no-repeat' src="./img/menu3.svg"
+                                            alt="icon"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="menu-item" href="#about">O firmie</a>
+                        <a class="menu-item" href="#gallery">Realizacje</a>
+                        <a class="menu-item" href="#contact">Kontakt</a>
+                        <div class="search-input-wrapper ">
+                            <div class="search-input">
+                                <input class="p-4" type="text" placeholder="Szukaj">
+                                <span class="text-4 p-4">&#10005;</span>
+                            </div>
+                        </div>
+                        <div class="search-icon">
+                            <img class='w-6' src="img/search.svg" alt="search icon">
+                        </div>
                     </div>
                 </div>
+                <!-- hamburger  -->
+                <button id="menu-btn" class="block hamburger md:hidden mr-4 focus:outline-none mt-2">
+                    <span class="hamburger-top"></span>
+                    <span class="hamburger-middle"></span>
+                    <span class="hamburger-bottom"></span>
+                </button>
             </div>
-            <!-- hamburger  -->
-            <button id="menu-btn" class="block hamburger md:hidden mr-4 focus:outline-none mt-2">
-                <span class="hamburger-top"></span>
-                <span class="hamburger-middle"></span>
-                <span class="hamburger-bottom"></span>
-            </button>
-        </div>
-        </div>
+    </div>
     </nav>
-    <section class="hero">
+    </div>
+    <section class="hero pt-20">
         <!-- slider main container -->
         <div class="swiper myswiper bg-beige relative">
             <!-- additional required wrapper -->
@@ -155,11 +160,12 @@
                                     nami</button>
                                 <button
                                     class="flex justify-center text-green lg:pt-3 lg:pb-3.5 lg:px-[22px] lg:mt-0 mt-6 pt-2 pb-2.5 px-3.5 rounded-[200px] items-center border border-green-1 hover:text-green hover:bg-gray link-arrow-down">Zobacz
-                                    nasze realizacje <img class="w-4 h-4 ml-2" src="img/downarr.svg" alt=""></button>
+                                    nasze realizacje <img class="w-4 h-4 ml-2" src="img/downarr.svg"
+                                        alt="icon arrow down"></button>
                             </div>
                         </div>
                         <div class="right relative xl:left-[90px] w-full lg:left-0">
-                            <img src="/src/img/sliderimg.png" alt="">
+                            <img src="/src/img/sliderimg.png" loading="lazy" alt="slider image">
                             <div class="pagination">
                                 <div class="pagi-box w-full flex gap-8">
                                     <div class="swiper-button-prev-new"></div>
@@ -193,11 +199,12 @@
                                     nami</button>
                                 <button
                                     class="flex justify-center text-green lg:pt-3 lg:pb-3.5 lg:px-[22px] lg:mt-0 mt-6 pt-2 pb-2.5 px-3.5 rounded-[200px] items-center border border-green-1 hover:text-green hover:bg-gray link-arrow-down">Zobacz
-                                    nasze realizacje <img class="w-4 h-4 ml-2" src="img/downarr.svg" alt=""></button>
+                                    nasze realizacje <img class="w-4 h-4 ml-2" src="img/downarr.svg"
+                                        alt="arrow down"></button>
                             </div>
                         </div>
                         <div class="right relative xl:left-[90px] w-full lg:left-0">
-                            <img src="/src/img/sliderimg.png" alt="">
+                            <img src="/src/img/sliderimg.png" loading="lazy" alt="">
                             <div class="pagination">
                                 <div class="pagi-box w-full flex gap-8">
                                     <div class="swiper-button-prev-new"></div>
@@ -212,8 +219,8 @@
         </div>
     </section>
     <!-- offer section -->
-    <section class="offer container flex items-start flex-col m-auto max-w-[1262px] ">
-        <div class="header-section  mt-[120px] text-black xl:ml-[120px] md:ml-[60px] md:p-0 px-4">
+    <section id="offer" class="offer container flex items-start flex-col m-auto max-w-[1262px] ">
+        <div class="header-section  mt-[120px] text-black xl:ml-[120px] md:ml-[60px] md:p-0 px-4 animation">
             <h2 class="font-inter text-xs text-green tracking-[-0.12px]">Oferta</h2>
             <h3 class="font-montserrat md:text-5xl text-2xl text-shadow font-medium mt-4 tracking-[-1.44px]">Działamy
                 <span class="italic font-inter">kompleksowo</span>
@@ -231,7 +238,7 @@
             class="cards flex md:flex-row flex-col items-center justify-between lg:mt-[96px] mt-10 w-full xl:p-0 p-5 flex-wrap lg:flex-nowrap">
             <!-- card -->
             <div
-                class="flex flex-col justify-between max-w-[378px] h-[370px] xl:mt-0 mt-8 py-12 px-10 bg-white rounded-[28px] hover:scale-[1.01] transition-all ease-in  hover:bg-green/10 ">
+                class="flex flex-col justify-between max-w-[378px] h-[370px] xl:mt-0 mt-8 py-12 px-10 bg-white rounded-[28px]  transition-colors ease-in  hover:bg-green/10 animation card">
                 <div class=" h-full flex flex-col content-between">
                     <img class='w-12 h-auto mb-8 text-black' src="img/IconCard1.png" alt="card icon">
                     <a href="#">
@@ -241,14 +248,14 @@
                         nowoczesnym
                         stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.</p>
                 </div>
-                <button href="#" class="inline-flex items-center">
+                <button href="#" class="inline-flex items-center showModal">
                     <span class="inline-flex  text-green border-b solid pb-1 items-center link-arrow">Dowiedz się
                         więcej<img class="ml-2.5 w-4 h-4" src="img/cardarrow.png" alt=""></span>
                 </button>
             </div>
             <!-- card -->
             <div
-                class="flex flex-col justify-between max-w-[378px] h-[370px] xl:mt-0 mt-8 py-12 px-10 bg-white  rounded-[28px] hover:scale-[1.01] transition-all ease-in hover:bg-green/10">
+                class="flex flex-col justify-between max-w-[378px] h-[370px] xl:mt-0 mt-8 py-12 px-10 bg-white  rounded-[28px]  transition-colors ease-in hover:bg-green/10 animation card">
                 <div class=" h-full flex flex-col content-between">
                     <img class='w-12 h-auto mb-8 text-black' src="img/IconCard2.png" alt="card icon">
                     <a href="#">
@@ -260,14 +267,14 @@
                         wirtualnego
                         spaceru animowanego w technologii 3D.</p>
                 </div>
-                <button href="#" class="inline-flex items-center">
+                <button href="#" class="inline-flex items-center showModal2">
                     <span class="inline-flex  text-green border-b solid pb-1 items-center link-arrow">Dowiedz się
-                        więcej<img class="ml-2.5 w-4 h-4" src="img/cardarrow.png" alt=""></span>
+                        więcej<img class="ml-2.5 w-4 h-4" src="img/cardarrow.png" alt="card icon"></span>
                 </button>
             </div>
             <!-- card -->
             <div
-                class="flex flex-col justify-between max-w-[378px] h-[370px] xl:mt-0 mt-8  py-12 px-10 bg-white  rounded-[28px] hover:scale-[1.01] transition-all ease-in hover:bg-green/10">
+                class="flex flex-col justify-between max-w-[378px] h-[370px] xl:mt-0 mt-8  py-12 px-10 bg-white  rounded-[28px]  transition-colors ease-in hover:bg-green/10 animation card">
                 <div class=" h-full flex flex-col content-between">
                     <img class='w-12 h-auto mb-8 text-black' src="img/IconCard3.png" alt="card icon">
                     <a href="#">
@@ -278,23 +285,69 @@
                         najnowszych rozwiązań i
                         zaawansowanych technologii.</p>
                 </div>
-                <button href="#" class="inline-flex items-center">
+                <button href="#" class="inline-flex items-center showModal3">
                     <span
                         class="inline-flex  text-green border-b solid pb-1 items-center group-hover:mr-2 link-arrow">Dowiedz
                         się
-                        więcej<img class="ml-2.5 w-4 h-4" src="img/cardarrow.png" alt=""></span>
+                        więcej<img class="ml-2.5 w-4 h-4" src="img/cardarrow.png" alt="card icon"></span>
                 </button>
+            </div>
+        </div>
+        <!-- modal bg  -->
+        <div
+            class="modal sm:h-full h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black/50 hidden z-20 modal-scroll sm:pt-0 ">
+            <!-- modal -->
+            <div class="bg-gray rounded shadow-sm w-3/4 sm:mt-0 mt-[800px]">
+                <div class="p-3 text-xl flex justify-between items-center">
+                    <h3>Usługi, które realizujemy w Projekty/ Realizacje/ Wizualizacje</h3>
+                    <button class="closeModal ">&cross;</button>
+                </div>
+                <div class="p-3">
+                    <div class="flex sm:flex-row flex-col items-center border border-green/10">
+                        <img class="sm:w-40 sm:h-40 w-full" src="img/gallery/Photo-6.png" alt="">
+
+                        <div class="flex flex-col sm:px-10 p-3">
+                            <h4 class="title sm:mb-10 mb-4 sm:mt-0 mt-4">Przykła usługi</h4>
+                            <p class=" w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus et
+                                minus
+                                porro
+                                corrupti
+                                laudantium
+                                iusto, obcaecati cum, blanditiis delectus tempore veniam architecto quidem at officia ab
+                                corporis
+                                voluptatibus nihil repellendus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="flex sm:flex-row flex-col items-center border border-green/10">
+                        <img class="sm:w-40 sm:h-40 w-full" src="img/gallery/Photo-5.png" alt="">
+
+                        <div class="flex flex-col sm:px-10 p-3">
+                            <h4 class="title sm:mb-10 mb-4 sm:mt-0 mt-4">Przykła usługi</h4>
+                            <p class=" w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus et
+                                minus
+                                porro
+                                corrupti
+                                laudantium
+                                iusto, obcaecati cum, blanditiis delectus tempore veniam architecto quidem at officia ab
+                                corporis
+                                voluptatibus nihil repellendus.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
     <!-- about section  -->
-    <section class="about  flex items-start flex-col xl:mt-[160px] mt-10 mx-auto bg-green">
+    <section id="about" class="about  flex items-start flex-col xl:mt-[160px] mt-10 mx-auto bg-green">
         <div
             class="flex lg:flex-row flex-col item  w-full  mx-auto justify-between items-center max-w-[1262px] lg:mb-0 sm:mb-10 mb-10  mt-0  bg-green">
             <div class="about-img lg:max-w-[664px] w-full relative lg:right-[90px] lg:mt-0 sm:mt-10 mt-10 ">
-                <img src="/src/img/aboutimg.png" alt="">
+                <img src="/src/img/aboutimg.png" loading="lazy" alt="about img">
             </div>
-            <div class="left text-gray lg:pl-[96px] lg:mt-0 mt-10 sm:p-0 p-5 ">
+            <div class="left text-gray lg:pl-[96px] lg:mt-0 mt-10 sm:p-0 p-5 animation">
 
                 <h2 class="font-inter text-xs tracking-[-0.12px]">O firmie</h2>
                 <h3
@@ -321,8 +374,9 @@
         </div>
     </section>
     <!-- gallery -->
-    <section class="gallery  pt-[120px] pb-[44px] bg-beige h-full relative mx-auto">
-        <div class="projects-header mx-auto container xl:pl-[160px] md:pl-[80px] sm:mb-[96px] mb-10 md:px-0 px-4">
+    <section id="gallery" class="gallery  pt-[120px] pb-[44px] bg-beige h-full relative mx-auto">
+        <div
+            class="projects-header mx-auto container xl:pl-[160px] md:pl-[80px] sm:mb-[96px] mb-10 md:px-0 px-4 animation">
             <h2 class="font-inter text-xs text-green tracking-[-0.12px]">Realizacje</h2>
             <h3 class="font-montserrat xl:text-5xl md:text-4xl text-2xl font-medium mt-4">Nasze <span class="italic">
                     projekty</span>
@@ -378,7 +432,7 @@
     </section>
     <!-- instagram -->
     <section>
-        <div class="md:container md:py-[60px] py-4 mx-auto">
+        <div class="md:container md:py-[60px] py-4 mx-auto animation">
             <div
                 class="wrapper max-w-[1040px] w-full mx-auto text-gray flex md:flex-row flex-col justify-center bg-green py-[120px] md:px-[110px] px-4 gap-16">
                 <h2
@@ -401,13 +455,13 @@
             </div>
         </div>
     </section>
-    <footer class="bg-black">
+    <footer id="contact" class="bg-black">
         <div class="container pt-20 mx-auto ">
             <div
                 class="wrapper max-w-[1040px] w-full mx-auto text-gray flex flex-col justify-center pt-30 sm:pb-20 pb-10">
                 <div class="top w-full flex md:flex-row flex-col justify-between border-b border-gray-1 pb-[62px]">
-                    <div class="flex items-center sm:justify-normal justify-center ms:mb-0 mb-6"><img
-                            src="/src/img/logolight.png" alt="Logo light" class="logo">
+                    <div class="flex items-center sm:justify-normal justify-center ms:mb-0 mb-6"><a href="#"><img
+                                src="/src/img/logolight.png" alt="Logo light" class="logo"></a>
                     </div>
 
                     <div class="flex sm:flex-row flex-col items-center gap-6">
@@ -437,7 +491,8 @@
                     <p class="text-4 leading-6 tracking-[-0.16px] text-center">Prawa zastrzeżone © 2022</p>
                     <div class="flex items-center gap-4 md:justify-normal justify-center sm:mt-0 mt-4">
                         <p class="text-4 leading-6 tracking-[-0.16px]">made by</p>
-                        <p class="text-4 leading-6 tracking-[-0.16px]"><img src="/src/img/logo-full-light.png" alt="">
+                        <p class="text-4 leading-6 tracking-[-0.16px]"><a href="https://adrespect.pl/"><img
+                                    src="/src/img/logo-full-light.png" alt="logo light"></a>
                         </p>
                     </div>
                 </div>
